@@ -35,10 +35,10 @@ public class Game extends JFrame {
         this.generateStop();
         this.setBarriersPosition();
         printBoard();
-        setSize(300, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        addKeyListener(new MyKeyListener());
-        setVisible(true);
+//        setSize(300, 300);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        addKeyListener(new MyKeyListener());
+//        setVisible(true);
     }
 
     private void createBoard() {
