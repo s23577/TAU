@@ -2,7 +2,7 @@ package org.example;
 
 import org.example.exceptions.WrongBoardSize;
 
-import javax.swing.*;
+//import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.security.SecureRandom;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Game extends JFrame {
+public class Game {
     private final int boardSize;
     private List<Integer> startPositionList = new ArrayList<>();
     private List<Integer> stopPositionList = new ArrayList<>();
@@ -201,33 +201,33 @@ public class Game extends JFrame {
         return pawnY;
     }
 
-    public class MyKeyListener implements KeyListener {
-        @Override
-        public void keyTyped(KeyEvent e) {
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-            int keyCode = e.getKeyCode();
-
-            switch (keyCode) {
-                case KeyEvent.VK_UP:
-                    moveUp();
-                    break;
-                case KeyEvent.VK_DOWN:
-                    moveDown();
-                    break;
-                case KeyEvent.VK_LEFT:
-                    moveLeft();
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    moveRight();
-                    break;
-            }
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-        }
-    }
+//    public class MyKeyListener implements KeyListener {
+//        @Override
+//        public void keyTyped(KeyEvent e) {
+//        }
+//
+//        @Override
+//        public void keyPressed(KeyEvent e) {
+//            int keyCode = e.getKeyCode();
+//
+//            switch (keyCode) {
+//                case KeyEvent.VK_UP:
+//                    moveUp();
+//                    break;
+//                case KeyEvent.VK_DOWN:
+//                    moveDown();
+//                    break;
+//                case KeyEvent.VK_LEFT:
+//                    moveLeft();
+//                    break;
+//                case KeyEvent.VK_RIGHT:
+//                    moveRight();
+//                    break;
+//            }
+//        }
+//
+//        @Override
+//        public void keyReleased(KeyEvent e) {
+//        }
+//    }
 }
