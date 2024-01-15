@@ -2,7 +2,6 @@ import org.example.BoardElements;
 import org.example.Game;
 import org.example.exceptions.WrongBoardSize;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -23,7 +22,7 @@ public class GameTest {
     private int pawnPositionX;
     private int pawnPositionY;
     ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-    private String expectedSuccessMessage = """
+    private final String expectedSuccessMessage = """
             YOU WON!
                 .--.
                |o_o |
@@ -291,5 +290,19 @@ public class GameTest {
             String consoleOutput = outputStreamCaptor.toString().trim();
             assertTrue(consoleOutput.contains(expectedMessage));
         }
+    }
+
+    @RepeatedTest(5)
+    public void startAndStop_shouldNotBe_nextToEachOther() {
+        int boardSize = 8;
+        game = new Game(boardSize);
+        board = game.getBoardElementsList();
+        startX = game.getStartPositionList().get(0);
+        startY = game.getStartPositionList().get(1);
+        stopX = game.getStopPositionList().get(0);
+        stopY = game.getStopPositionList().get(1);
+
+        boolean isNextToEachOther = (startX - stopX == 0 && Math.abs(startY - stopY) == 1) || (startY - stopY == 0 && Math.abs(startX - stopY) == 1);
+        assertFalse(isNextToEachOther);
     }
 }

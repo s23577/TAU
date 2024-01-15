@@ -67,18 +67,18 @@ public class Game extends JFrame {
 
     private void generateStop() {
         int randomStopX = randomPosition.nextInt(boardSize);
-        int randomStopY;
-        if (randomStopX == this.startPositionList.get(0) && this.startPositionList.get(0) == 0) {
+        int randomStopY = 0;
+        while(randomStopX == this.startPositionList.get(0)){
+            randomStopX = randomPosition.nextInt(boardSize);
+        }
+        if (this.startPositionList.get(0) == 0) {
             randomStopX = boardSize - 1;
             randomStopY = randomPosition.nextInt(boardSize);
-        } else if (randomStopX == this.startPositionList.get(0) && this.startPositionList.get(0) == boardSize - 1) {
+        } else if (this.startPositionList.get(0) == boardSize - 1) {
             randomStopX = 0;
             randomStopY = randomPosition.nextInt(boardSize);
-        } else if (randomStopX == this.startPositionList.get(0)) {
-            randomStopX = randomStopX - 1;
-            randomStopY = randomPosition.nextInt(boardSize);
-        } else {
-            randomStopY = randomPosition.nextBoolean() ? 0 : boardSize - 1;
+        } else if (this.startPositionList.get(1) == 0){
+            randomStopY = boardSize - 1;
         }
         this.stopPositionList = List.of(randomStopX, randomStopY);
         boardElementsList.get(randomStopX).set(randomStopY, BoardElements.STOP);
