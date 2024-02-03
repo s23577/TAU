@@ -13,45 +13,42 @@ GuidePRO team ensures that 100 logged users could use this app at the same time.
 ### Getting to know with Jmeter tool
 
 To start I have prepared Thread, Sampler and Listeners like View Results Tree, Summarize Report and Aggregate Graph.
-!JMETER_start
-![ga_1.png](https://github.com/s23577/TAU/blob/main/LAB_3/images/ga_1.png?raw=true)
+![Test Plan configuration](https://github.com/s23577/TAU/blob/main/LAB_5/screenshots/JMETER_start.png?raw=true)
 
 ### First cases in JMeter
 
-#### 1 thread, 1 rump-up period, 1 loop count
+#### 1. 1 thread, 1 rump-up period, 1 loop count
 
-!test_1
+![Test 1](https://github.com/s23577/TAU/blob/main/LAB_5/screenshots/test_1.png?raw=true)
 For one request the time of execution is 11 ms.
 Important is, that when I run this test plan more than once - the time is between 7-39 ms.
 
-#### 100 threads, 1 rump-up period, 1 loop count
+#### 2. 100 threads, 1 rump-up period, 1 loop count
 
-!test_2
+![Test 2](https://github.com/s23577/TAU/blob/main/LAB_5/screenshots/test_2.png?raw=true)
 The average time is 4 ms. Server has no issue with 100 users (threads).
 
-!test_2_more
+![Test 2 more](https://github.com/s23577/TAU/blob/main/LAB_5/screenshots/test_2_more.png?raw=true)
 The throughput equals about 6k requests per 1 minute.
 
-#### 100 threads, 1 rump-up period, 100 loop count
+#### 3. 100 threads, 1 rump-up period, 100 loop count
 
-!test_3
+![Test 3](https://github.com/s23577/TAU/blob/main/LAB_5/screenshots/test_3.png?raw=true)
 The average time has picked up to 146 ms. Total samples which were send equals 10000.
 
-!test_3_more
+![Test 3 more](https://github.com/s23577/TAU/blob/main/LAB_5/screenshots/test_3_more.png?raw=true)
 The amount of requests per minute equals now 40k.
 
-#### 10000 threads, 1 rump-up period, 10 loop count
-
-!test_4
+#### 4. 10000 threads, 1 rump-up period, 10 loop count
+![Test 4](https://github.com/s23577/TAU/blob/main/LAB_5/screenshots/test_4.png?raw=true)
 Test plan is not finished. It seems that tests loaded app server. Total expected samples is 100000, but it stopped at
 40510 and never started again.
 The tool JMeter is also not corresponding properly at such conditions.
 For 1000 threads - tests are performed under 10s.
 I have found that over 4k requests - the app or server crashes.
 
-#### 4000 threads, 10 rump-up period, 1 loop count
-
-!test_5
+#### 5. 4000 threads, 10 rump-up period, 1 loop count
+![Test 5](https://github.com/s23577/TAU/blob/main/LAB_5/screenshots/test_5.png?raw=true)
 The longest request response for 4000 users at the same time equals about 5s. The average is 1s which is still very good
 performance even if guidePRO assumes only 100 active users.
 
